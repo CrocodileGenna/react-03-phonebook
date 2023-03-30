@@ -19,8 +19,24 @@ export class App extends Component {
     filter: '',
   };
 
+  componentDidMount() {
+    const contacts = localStorage.getItem('contacts');
+    const contactsParse = JSON.parse(contacts);
+
+    if (contactsParse.length === 0) {
+      this.setState({ contacts: this.state.contacts });
+    } else {
+      this.setState({ contacts: contactsParse });
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
+  }
+
   submitHandler = value => {
     const { contacts } = this.state;
+
     value.id = nanoid();
     contacts.some(contact => contact.name === value.name)
       ? Notiflix.Notify.warning(
@@ -30,7 +46,6 @@ export class App extends Component {
   };
 
   handleName = e => {
-    // console.log(e.target.value);
     this.setState(prevState => ({
       ...prevState,
       filter: e.target.value,
@@ -49,11 +64,11 @@ export class App extends Component {
     if (filter) {
       return contacts.filter(contact => contact.name.includes(filter));
     }
+
     return contacts;
   };
 
   render() {
-    // const { contacts } = this.state;
     return (
       <GlobalStyle>
         <ItForm submit={this.submitHandler} />
@@ -76,6 +91,6 @@ Search.propTypes = {
   search: PropTypes.func.isRequired,
 };
 ListContacts.propTypes = {
-  list: PropTypes.func.isRequired,
+  list: PropTypes.array.isRequired,
   remove: PropTypes.func.isRequired,
 };

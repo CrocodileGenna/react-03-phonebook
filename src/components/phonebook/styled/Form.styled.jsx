@@ -8,8 +8,7 @@ export const FORM_DIV = styled(Form)`
   justify-content: center;
   align-items: center;
   padding: 20px;
-  margin: 30px;
-  border-radius: 5px;
+  border-radius: 7px;
   width: 300px;
 
   background-color: #f7f7f7;
