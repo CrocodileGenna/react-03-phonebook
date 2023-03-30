@@ -31,5 +31,5 @@ export const LIST_DIV = styled.div`
   justify-content: center;
   align-items: center;
   padding: 10px;
-  width: 300px;
+  width: 400px;
 `;

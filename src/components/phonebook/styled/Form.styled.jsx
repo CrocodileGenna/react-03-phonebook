@@ -21,6 +21,7 @@ export const INPUT = styled(Field)`
   border-radius: 4px;
   padding: 5px;
   border: none;
+  outline: none;
   width: 270px;
   height: 25px;
   box-shadow: 0px 0px 1px;
@@ -28,8 +29,7 @@ export const INPUT = styled(Field)`
 
   :hover,
   :focus {
-    cursor: pointer;
-    box-shadow: 0px 0px 3px;
+    box-shadow: 0px 0px 3px red;
   }
 `;
 
@@ -47,6 +47,7 @@ export const BUTTUN = styled.button`
 
   :hover,
   :focus {
+    cursor: pointer;
     color: #fff;
     background-color: #0e9705bf;
     box-shadow: 0px 0px 3px #000000;

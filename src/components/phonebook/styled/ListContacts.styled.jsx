@@ -4,8 +4,7 @@ export const LIST_UL = styled.ul`
   display: flex;
   flex-direction: column;
   align-items: center
-
-  width: 350px;
+  width: 100%;
 `;
 
 export const ONE_CONTACT_LI = styled.li`
@@ -15,7 +14,7 @@ export const ONE_CONTACT_LI = styled.li`
   margin: 5px;
   padding: 5px 10px;
   border-radius: 5px;
-  width: 300px;
+  width: 350px;
   color: black;
   background-color: #0000002e;
   box-shadow: 0px 0px 3px;
@@ -35,6 +34,7 @@ export const BUTTUN = styled.button`
 
   :hover,
   :focus {
+    cursor: pointer;
     color: #fff;
     background-color: red;
   }
